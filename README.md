@@ -1,91 +1,105 @@
-<<<<<<< HEAD
-# IBM Telco Customer Churn Prediction
-[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter)](https://jupyter.org/try) [![Open in HTML](https://img.shields.io/badge/Html-Open%20Notebook-blue?logo=HTML5)](https://nbviewer.org/github/ahmedshahriar/Customer-Churn-Prediction/blob/main/Telco-Customer-Churn-Prediction.html) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ahmedshahriar/Customer-Churn-Prediction/main) [![Live in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io//ahmedshahriar/Telco-Customer-Churn-Prediction-Streamlit-App/main/app.py)
+# AI-Based Request Classification and Priority Prediction System
 
-The objective of this notebook is to present an extensive analysis of the **IBM Customer Churn Dataset** and to predict the customer churn rate.
+An intelligent machine learning solution designed to automate service request classification, priority prediction, and resolver group assignment for enterprise support operations. The platform analyzes historical service records, applies advanced machine learning models, and predicts request categories, priority levels, and routing information to reduce manual effort, improve operational efficiency, and accelerate incident resolution.
 
-### Dataset Source 
+## 🚀 Key Features
 
-* [Kaggle Dataset URL](https://www.kaggle.com/blastchar/telco-customer-churn)
-* [GitHub Dataset URL](https://github.com/IBM/telco-customer-churn-on-icp4d/tree/master/data)
+* **Automated Request Classification**: Classifies incoming service requests into predefined categories using supervised machine learning models.
+* **Priority Prediction**: Predicts ticket priority levels based on request descriptions, historical patterns, and operational attributes.
+* **Resolver Group Recommendation**: Recommends the most appropriate resolver group for faster request assignment and reduced manual routing.
+* **Advanced Feature Engineering**: Implements preprocessing pipelines for text cleaning, categorical encoding, missing value handling, and feature transformation.
+* **REST API Integration**: Exposes prediction services through FastAPI endpoints for seamless integration with enterprise ITSM platforms.
+* **Experiment Tracking**: Supports model versioning, experiment tracking, and performance comparison using MLflow.
+* **Scalable Architecture**: Built with a modular architecture that supports continuous model improvement and enterprise deployment.
 
-### Streamlit App repository 
-* [Telco Customer Churn Prediction Streamlit App](https://github.com/ahmedshahriar/Telco-Customer-Churn-Prediction-Streamlit-App)
+## 🛠️ Tech Stack
 
-### You can also view this notebook on kaggle
-1. [Churn Prediction I : EDA+Statistical Analysis](https://www.kaggle.com/ahmedshahriarsakib/churn-prediction-i-eda-statistical-analysis)
-2. [Churn Prediction II : Triple Boost Stacking+  Optuna](https://www.kaggle.com/ahmedshahriarsakib/churn-prediction-ii-triple-boost-stacking-optuna)
+* **Programming Language**: Python 3.11
+* **Machine Learning**: Scikit-learn, XGBoost
+* **Data Processing**: Pandas, NumPy
+* **Database**: SQL
+* **API Framework**: FastAPI
+* **Experiment Tracking**: MLflow
+* **Deployment**: REST APIs
 
-### This project also serves as assignments for the courses below - 
-1. [IBM Exploratory Data Analysis for Machine Learning](https://www.coursera.org/learn/ibm-exploratory-data-analysis-for-machine-learning?specialization=ibm-machine-learning)
-2. [IBM Supervised Machine Learning: Classification](https://www.coursera.org/learn/supervised-machine-learning-classification?specialization=ibm-machine-learning)
+## 🚦 Getting Started
 
-## Summary
+### Installation
 
-* Dataset mostly has categorical variables
-* Data is not normally distributed, performed Nonparametric Statistical tests
-* Performed statistical hypothesis test to check correlation , multicollinearity
-* Imbalanced dataset, did experiment with different sampling techniques(e.g stratifying, imblearn - SMOTE etc)
-* Tuned Hyperparameters using Optuna
-* Performed single level Stacking Ensemble with Triple Gradient boosting algorithms and classic algorithms
-* Number of months the customer has stayed with the company (tenure) and the contract term of the customer (contract) are the most important features that have strong correlation with churn of the customer
-* Results from statiscial hypotheses testing reflects similarity with model feature importance
-* With 80/20 train/test split triple boosting stacking ensemble model achieved an AUC of ~0.85
+```bash
+# Clone the repository
+git clone <repository-url>
 
-### Built With
+# Navigate to project directory
+cd ai-request-classification-system
 
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
-optuna==2.10.0
-xgboost==0.90
-catboost==1.0.1
-lightgbm==2.2.3
-plotly==4.4.1
-scipy==1.7.1
-scikit-learn==0.22.2.post1
+
+### Running the Application
+
+Start the FastAPI application using:
+
+```bash
+uvicorn app.main:app --reload
 ```
-=======
-# IBM Telco Customer Churn Prediction
-[![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?logo=Jupyter)](https://jupyter.org/try) [![Open in HTML](https://img.shields.io/badge/Html-Open%20Notebook-blue?logo=HTML5)](https://nbviewer.org/github/ahmedshahriar/Customer-Churn-Prediction/blob/main/Telco-Customer-Churn-Prediction.html) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ahmedshahriar/Customer-Churn-Prediction/main) [![Live in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io//ahmedshahriar/Telco-Customer-Churn-Prediction-Streamlit-App/main/app.py)
 
-The objective of this notebook is to present an extensive analysis of the **IBM Customer Churn Dataset** and to predict the customer churn rate.
+The API will be available at:
 
-### Dataset Source 
-
-* [Kaggle Dataset URL](https://www.kaggle.com/blastchar/telco-customer-churn)
-* [GitHub Dataset URL](https://github.com/IBM/telco-customer-churn-on-icp4d/tree/master/data)
-
-### Streamlit App repository 
-* [Telco Customer Churn Prediction Streamlit App](https://github.com/ahmedshahriar/Telco-Customer-Churn-Prediction-Streamlit-App)
-
-### You can also view this notebook on kaggle
-1. [Churn Prediction I : EDA+Statistical Analysis](https://www.kaggle.com/ahmedshahriarsakib/churn-prediction-i-eda-statistical-analysis)
-2. [Churn Prediction II : Triple Boost Stacking+  Optuna](https://www.kaggle.com/ahmedshahriarsakib/churn-prediction-ii-triple-boost-stacking-optuna)
-
-### This project also serves as assignments for the courses below - 
-1. [IBM Exploratory Data Analysis for Machine Learning](https://www.coursera.org/learn/ibm-exploratory-data-analysis-for-machine-learning?specialization=ibm-machine-learning)
-2. [IBM Supervised Machine Learning: Classification](https://www.coursera.org/learn/supervised-machine-learning-classification?specialization=ibm-machine-learning)
-
-## Summary
-
-* Dataset mostly has categorical variables
-* Data is not normally distributed, performed Nonparametric Statistical tests
-* Performed statistical hypothesis test to check correlation , multicollinearity
-* Imbalanced dataset, did experiment with different sampling techniques(e.g stratifying, imblearn - SMOTE etc)
-* Tuned Hyperparameters using Optuna
-* Performed single level Stacking Ensemble with Triple Gradient boosting algorithms and classic algorithms
-* Number of months the customer has stayed with the company (tenure) and the contract term of the customer (contract) are the most important features that have strong correlation with churn of the customer
-* Results from statiscial hypotheses testing reflects similarity with model feature importance
-* With 80/20 train/test split triple boosting stacking ensemble model achieved an AUC of ~0.85
-
-### Built With
-
+```text
+http://localhost:8000
 ```
-optuna==2.10.0
-xgboost==0.90
-catboost==1.0.1
-lightgbm==2.2.3
-plotly==4.4.1
-scipy==1.7.1
-scikit-learn==0.22.2.post1
+
+Swagger Documentation:
+
+```text
+http://localhost:8000/docs
 ```
->>>>>>> ebe8f3ccae65efebe483bc3a8763c145a3a68998
+
+## ⚙️ Configuration
+
+The application configuration is managed using environment variables and configuration files.
+
+Typical configurable parameters include:
+
+* Database Connection
+* Model Path
+* MLflow Tracking URI
+* Logging Configuration
+* Prediction Thresholds
+* API Settings
+
+Configuration can be stored in:
+
+* `.env`
+* `config.yaml`
+
+allowing easy deployment across development, testing, and production environments.
+
+## 🧪 Model Evaluation
+
+The system evaluates machine learning performance using multiple classification metrics, including:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* ROC-AUC
+* Confusion Matrix
+
+Cross-validation and hyperparameter tuning are performed to improve prediction accuracy and model generalization before deployment.
+
+## 🛡️ License
+
+This project is licensed under the Apache-2.0 License.
